@@ -1,28 +1,21 @@
-import React, { useState } from "react";
-import InputForm from "./InputForm";
-
-const App=()=> {
-  const [productList, setproductList]= useState([]);
-  const addproductHandler=(
-    listitemname,
-    listitemdescription,
-    listitemprice,
-    listitemsize)=>{
-setproductList((prevState)=>{
-  return [...prevState,{
-    itemname: listitemname,
-    itemdescription: listitemdescription,
-    itemprice: listitemprice,
-    itemsize: listitemsize
-  },];
-});
-    }
+import Cart from "./Components/cart/cart";
+import ShoeForm from "./Components/Form/ShoeForm";
+import Header from "./Components/Header/Header";
+import Shoes from "./Components/Shoes/Shoes";
+import CartProvider from "./Components/store/CartProvider";
+import ShoeProvider from "./Components/store/ShoeProvider";
+import "./App.css";
+function App() {
   return (
-    <div>
-      <InputForm onAddproduct={addproductHandler}/>
-      <productList list={productList} setList={setproductList}/>
-    </div>
-  )
+    <CartProvider>
+    <ShoeProvider>
+      <Header />
+      <ShoeForm />
+      <Shoes />
+      <Cart/>
+    </ShoeProvider>
+    </CartProvider>
+  );
 }
 
 export default App;
