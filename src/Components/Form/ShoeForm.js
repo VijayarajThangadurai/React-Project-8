@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from "react";
-import { Form, Button, Container, ThemeProvider} from 'react-bootstrap';
-import ShoeContext from "../store/Shoe-context";
+import { Form, Button, Container} from 'react-bootstrap';
+import ShoeContext from "../../Components/store/Shoe-context";
 
 
 const ShoeForm = () => {
@@ -30,7 +30,6 @@ const ShoeForm = () => {
         
     }
   return (
-    <ThemeProvider>
     <Container>
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3">
@@ -67,7 +66,7 @@ const ShoeForm = () => {
         </Button>
       </Form>
     </Container>
-    </ThemeProvider>
+
   );
 };
 

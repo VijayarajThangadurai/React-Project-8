@@ -14,7 +14,7 @@ const ShoeItem=(props)=>{
 
 let size;
     const largeClickHandler=()=>{
-        console.log('clik')
+        console.log('click')
         size='l'
         cartCtx.addProduct({...props,quantityL:1},size)
         setLargeQuantity((prev)=>{
@@ -44,7 +44,7 @@ let size;
     <Col>{props.name}</Col>
     <Col>{props.des}</Col>
     <Col>{`${props.price} Rs`}</Col>
-    <Col><Button onClick={largeClickHandler}>{`Medium Size (${largeQuantity})`}</Button></Col>
+    <Col><Button onClick={largeClickHandler}>{`large Size (${largeQuantity})`}</Button></Col>
     <Col><Button onClick={mediumClickHandler}>{`Medium Size (${mediumQuantity})`}</Button></Col>
     <Col><Button onClick={smallClickHandler}>{`Small Size (${smallQuantity})`}</Button></Col>
 </Row>
